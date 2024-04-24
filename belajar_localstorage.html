@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Local Storage Learning</title>
+</head>
+<body>
+
+<!-- 
+Keterangan:
+1. Pertama, kita perlu menambahkan input dan tombol untuk menyimpan data.
+2. Kedua, kita perlu menulis fungsi JavaScript untuk menyimpan dan mengambil data dari local storage.
+3. Terakhir, kita perlu memanggil fungsi-fungsi tersebut saat halaman dimuat ulang.
+-->
+
+<label for="dataInput">Data:</label>
+<input type="text" id="dataInput">
+<button onclick="saveData()">Simpan</button>
+
+<script>
+// Fungsi untuk menyimpan data ke local storage
+function saveData() {
+    var data = document.getElementById('dataInput').value;
+    localStorage.setItem('savedData', data);
+    alert('Data berhasil disimpan!');
+}
+
+// Fungsi untuk mengambil data dari local storage saat halaman dimuat
+window.onload = function() {
+    var savedData = localStorage.getItem('savedData');
+    if(savedData) {
+        document.getElementById('dataInput').value = savedData;
+    }
+}
+</script>
+
+</body>
+</html>
