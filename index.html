@@ -18,7 +18,10 @@ Keterangan:
 <input type="text" id="dataInput">
 <button onclick="saveData()">Simpan</button>
 
-<script>
+    <br/>
+<p>Data dari inputan save di localstorage </p>
+<p id="showData"></p>
+    <script>
 // Fungsi untuk menyimpan data ke local storage
 function saveData() {
     var data = document.getElementById('dataInput').value;
@@ -30,7 +33,7 @@ function saveData() {
 window.onload = function() {
     var savedData = localStorage.getItem('savedData');
     if(savedData) {
-        document.getElementById('dataInput').value = savedData;
+        document.getElementById('showData').textContent = savedData;
     }
 }
 </script>
